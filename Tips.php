@@ -11,7 +11,7 @@
 # 8) Funciones variables ejemplo
 # 9) Funciones Predefinidas en php
 # 10) Funciones Matematicas
-# 11) 
+# 11) Mas funciones Predefinidas
 # 12) 
 
 
@@ -126,14 +126,22 @@ echo rand(3,10);
 # Numero Pi 
 echo pi();
 
-# Redondear numero
-
+# Redondear numero a 2 decimales
+echo "Redondear ".round(7.5812312,2);
 
 
 #----------------------------------------------------------------------------------------------------------------------------------------------
-# 11) 
+# 11) Mas funciones Predefinidas
 
+# tipo de variable
+$tabla = [];
+echo gettype($tabla);
 
+# comprobar tipos de datos
+echo is_array($tabla);
+echo is_float($tabla);
+echo is_bool($tabla);
+# okey
 
 
 #----------------------------------------------------------------------------------------------------------------------------------------------
