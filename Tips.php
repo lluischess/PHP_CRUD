@@ -8,9 +8,9 @@
 # 5) Function con paramaetros opcionales
 # 6) La mejor Practica con funciones es el return
 # 7) Variables locales y globales
-# 8) 
-# 9) 
-# 10) 
+# 8) Funciones variables ejemplo
+# 9) Funciones Predefinidas en php
+# 10) Funciones Matematicas
 # 11) 
 # 12) 
 
@@ -85,17 +85,48 @@ function hola(){
 
 
 #----------------------------------------------------------------------------------------------------------------------------------------------
-# 8) 
+# 8) Funciones variables ejemplo
 
+function buenosdias(){ 
+  return "Hola buenos dias";
+}
+
+function buenasnoches(){ 
+  return "Buenas noches";
+}
+# Guardamos el nombre de la funcion en una variable y luego la llamamos con la misma variable
+$funcion_saludos = "buenasnoches";
+
+echo $funcion_saludos();
 
 
 #----------------------------------------------------------------------------------------------------------------------------------------------
-# 9) 
+# 9) Funciones Fechas
 
+# Formato de fecha:
+echo date('d-m-y') . "<br>";
+echo date("d M, Y, g:i a"). "<br>";
+echo date("Y-m-d H:i:s"). "<br>"; 
+echo date('H:i:s'). "<br>";
 
+# Time en integer
+echo time();
+ 
 
 #----------------------------------------------------------------------------------------------------------------------------------------------
-# 10) 
+# 10) Funciones Matematicas
+
+# Reiz cuadrada de un numero
+echo "Raiz cuadrada de 10 es: ". sqrt(10); 
+
+# Numero aleatorio Random
+echo rand(). "<br>";
+echo rand(3,10);
+
+# Numero Pi 
+echo pi();
+
+# Redondear numero
 
 
 
