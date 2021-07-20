@@ -12,7 +12,7 @@
 # 9) Funciones Predefinidas en php
 # 10) Funciones Matematicas
 # 11) Mas funciones Predefinidas
-# 12) 
+# 12) Include y require
 
 
 
@@ -141,7 +141,56 @@ echo gettype($tabla);
 echo is_array($tabla);
 echo is_float($tabla);
 echo is_bool($tabla);
-# okey
+
+# Limpiar espacios de un string al inicio y al final
+$texto = "  hola   ";
+var_dump(trim($texto));
+
+# Eliminar variable o indices
+unset($tabla);
+
+# Contador de caracteres de un string
+$testolargo = "sdfasfasdfasdf";
+echo strlen($testolargo);
+
+# Encontrar la posicion caracter o palabra
+$frase = "la vida es Bella";
+echo strpos($frase, "vida");
+
+# Remplazar palabras de un String
+echo str_replace("vida","puta",$frase);
+echo $frase;
+
+# Upercase convertir a Mayusculas y minusculas
+echo strtoupper($frase);
+echo strtolower($frase);
+
+#----------------------------------------------------------------------------------------------------------------------------------------------
+# 12) Include y require
+
+include '<EjerciciosBasicos>/Ejercicio1.php'; // lo incluye siempre y las veces que quieras
+include_once '<EjerciciosBasicos>/Ejercicio1.php'; // solo puede incluirse una vez
+require '<EjerciciosBasicos>/Ejercicio1.php'; // es necesario para continuar
+
+
+#----------------------------------------------------------------------------------------------------------------------------------------------
+# 12) 
+
+
+
+#----------------------------------------------------------------------------------------------------------------------------------------------
+# 12) 
+
+
+
+#----------------------------------------------------------------------------------------------------------------------------------------------
+# 12) 
+
+
+
+#----------------------------------------------------------------------------------------------------------------------------------------------
+# 12) 
+
 
 
 #----------------------------------------------------------------------------------------------------------------------------------------------
