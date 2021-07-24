@@ -285,6 +285,9 @@ var_dump(array_reverse($peliculas));
 # Buscar dentro de un array
 echo array_search('selena',$cantantes);
 
+# Longitut de un array
+echo count($num);
+
 
 #----------------------------------------------------------------------------------------------------------------------------------------------
 # 12) 
