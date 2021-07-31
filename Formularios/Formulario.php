@@ -5,7 +5,7 @@
 # 2) Recoger valor de un input y etiquetas html input
 # 3) Tipos de campos formularios
 # 4) Recibir datos de un Formulario Basico
-# 5) 
+# 5) Validar Formulario
 # 6) 
 # 7) 
 # 8) 
@@ -79,7 +79,53 @@ $nombre = $_POST['nombre'];
 <?php
 #----------------------------------------------------------------------------------------------------------------------------------------------
 # 4) Recibir datos de un Formulario Basico
+?>
+<h2>Formulario HTML</h2>
+<form action="DatosRecibidos.php" method="POST">
+    <p>
+        <label for="titulo">Titulo: </label>
+        <input type="text" name="titulo"/>
+    </p>
+    <p>
+        <textarea name="descripcion" cols="70" rows="10"></textarea>
+    </p> 
+    <input type="submit" value="Enviar"/>
+</form>
 
 
 
+
+<?php
+
+
+#----------------------------------------------------------------------------------------------------------------------------------------------
+# 5) Validar Formulario
+?>
+
+<h2>Validar Formulario HTML</h2>
+<form action="Procesarform.php" method="POST">
+    <p>
+        <label for="name">Name: </label>
+        <input type="text" name="name" require pattern="[A-Za-z]+"/>
+    </p>
+    <p>
+        <label for="apellido">Apellido: </label>
+        <input type="text" name="apellido" require pattern="[A-Za-z]+"/>
+    </p>
+    <p>
+        <label for="age">Age: </label>
+        <input type="number" name="age" require pattern="[0-9]+"/>
+    </p>
+    <p>
+        <label for="email">Email: </label>
+        <input type="email" name="email" require/>
+    </p>
+    <p>
+        <label for="pass">Password: </label>
+        <input type="password" name="pass" require/>
+    </p>
+    <input type="submit" value="Enviar"/>
+</form>
+
+<?php
 #----------------------------------------------------------------------------------------------------------------------------------------------
