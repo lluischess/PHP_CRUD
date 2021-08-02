@@ -102,8 +102,32 @@ $nombre = $_POST['nombre'];
 # 5) Validar Formulario
 ?>
 
+
 <h2>Validar Formulario HTML</h2>
-<form action="Procesarform.php" method="POST">
+<?php 
+if (isset($_GET['error'])) {
+    $error = $_GET['error'];
+    if ($error == "true"){
+        echo '<strong style="color:red">Faltan Datos en el formulario</strong>';
+    }
+    elseif ($error == "Nombre"){
+        echo '<strong style="color:red">El nombre es incorrecto</strong>';
+    }
+    elseif ($error == "Apellidos"){
+        echo '<strong style="color:red">El apellido es incorrecto</strong>';
+    }
+    elseif ($error == "age"){
+        echo '<strong style="color:red">La edad es incorrecto</strong>';
+    }
+    elseif ($error == "Email"){
+        echo '<strong style="color:red">El Email es incorrecto</strong>';
+    }
+    elseif ($error == "Password"){
+        echo '<strong style="color:red">El nombre es incorrecto</strong>';
+    }
+}
+?>
+<form action="DatosRecibidos.php" method="POST">
     <p>
         <label for="name">Name: </label>
         <input type="text" name="name" require pattern="[A-Za-z]+"/>
@@ -118,7 +142,7 @@ $nombre = $_POST['nombre'];
     </p>
     <p>
         <label for="email">Email: </label>
-        <input type="email" name="email" require/>
+        <input type="text" name="email" require/>
     </p>
     <p>
         <label for="pass">Password: </label>
@@ -128,4 +152,64 @@ $nombre = $_POST['nombre'];
 </form>
 
 <?php
+
+
+# otro archivo.php
+$error = "true";
+
+if(!empty($_POST['name']) && !empty($_POST['apellido']) && !empty($_POST['age']) && !empty($_POST['email']) && !empty($_POST['pass'])) {
+    $error = "false";
+
+    $nombre = $_POST['name'];
+    $apellidos = $_POST['apellido'];
+    $age = $_POST['age'];
+    $email = $_POST['email'];
+    $pass = $_POST['pass'];
+
+    // Segunda Validación
+
+    # preg_match si es diferente a letras
+    if (!is_string($nombre) || !preg_match("/[a-zA-Z ]+/",$nombre)){
+        $error = "Nombre";
+        header("Location:testing.php?error=$error");
+    }
+    if (!is_string($apellidos) || !preg_match("/[a-zA-Z ]+/",$apellidos)){
+        $error = "Apellidos";
+        header("Location:testing.php?error=$error");
+    }
+    # filter_var($age, FILTER_VALIDATE_INT) sirve para filtrar un valor y validar si es un INt o lo que sea
+    if (!is_numeric($age) || !filter_var($age, FILTER_VALIDATE_INT)){
+        $error = "Age";
+        header("Location:testing.php?error=$error");
+    }
+    if (!is_string($email) || !filter_var($email, FILTER_VALIDATE_EMAIL)){
+        $error = "Email";
+        header("Location:testing.php?error=$error");
+    }
+    if (empty($pass) || strlen($pass)<5){
+        $error = "Password";
+        header("Location:testing.php?error=$error");
+    }
+}else {
+    $error = "true";
+    header("Location:testing.php?error=$error");
+}
+
+
+?>
+
+<body>
+    <?php if ($error == "false"): ?>
+        <p><?=$nombre?></p>
+        <p><?=$apellidos?></p>
+        <p><?=$age?></p>
+        <p><?=$email?></p>
+        <p><?=$pass?></p>
+    <?php endif; ?>
+
+</body>
+
+
+<?php
+
 #----------------------------------------------------------------------------------------------------------------------------------------------
