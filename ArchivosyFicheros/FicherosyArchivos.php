@@ -8,6 +8,7 @@
 # 5) Crear directorios con permisos completos
 # 6) Borrar Directorios
 # 7) Crear archivos en directorio
+# 8) Cargar archivos servidor por formulario
 
 
 
@@ -82,3 +83,38 @@ if ($gestor = opendir('./mi_carpeta')){ // abrir el directorio
         }
     }
 }
+#----------------------------------------------------------------------------------------------------------------------------------------------
+# 8) Cargar archivos servidor por formulario
+
+?>
+
+<h1>Subir archivos con PHP</h1>
+<form action="upload.php" method="POST" enctype="multipart/form-data">
+    <input type="file" name="archivo"/>
+    <input type="submit" name="enviar"/>
+</form>
+
+
+<?php
+
+# Procesar en archivo upload.php
+
+$archivo = $_FILES['archivo'];
+$nom_archivo = $archivo['name'];
+$type_archivo = $archivo['type'];
+
+if ($type_archivo == "image/jpeg" || $type_archivo == "image/jpg" || $type_archivo == "image/png" ) {
+    if (!is_dir('imagenes')){
+        mkdir('imagen',0777);
+    }
+
+    move_uploaded_file($archivo['tmp_name'],'images/' . $nom_archivo);
+    header("Refresh: 5, URL=testing.php");
+    echo "<h1> Todo correcto </h1>";
+
+}else{
+    header("Refresh: 5, URL=testing.php");
+    echo "<h1> Sube una imagen valida en jpg o png </h1>";
+}
+
+#----------------------------------------------------------------------------------------------------------------------------------------------
