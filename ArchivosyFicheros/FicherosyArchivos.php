@@ -9,6 +9,7 @@
 # 6) Borrar Directorios
 # 7) Crear archivos en directorio
 # 8) Cargar archivos servidor por formulario
+# 9) Mostrar Imagenes del servidor de una carpeta
 
 
 
@@ -118,3 +119,26 @@ if ($type_archivo == "image/jpeg" || $type_archivo == "image/jpg" || $type_archi
 }
 
 #----------------------------------------------------------------------------------------------------------------------------------------------
+# 9) Mostrar Imagenes del servidor de una carpeta
+
+?>
+
+<h1>Mostrar imagenes</h1>
+<form action="upload.php" method="POST" enctype="multipart/form-data">
+    <input type="file" name="archivo"/>
+    <input type="submit" name="enviar"/>
+</form>
+
+
+<?php
+
+
+$gestor = opendir('./imagen');
+
+if($gestor) {
+    while (($imagen = readdir($gestor)) !== false){
+        if($imagen != '.' && $imagen != '..'){
+            echo "<img src='imagen/$imagen' width='200px'/> <br>";
+        }
+    }
+}
