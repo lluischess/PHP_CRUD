@@ -18,6 +18,7 @@
 # 15) Funciones para Arrays
 # 16) Redireccionar Pagina web
 # 17) Cifrar contraseña
+# 18) Guardar string sin espacios
 
 
 
@@ -305,6 +306,11 @@ header('Location:ver_cookies.php');
  # Descifrar contraseña y comparar la password
  #   password original / pasword encriptada(hash) TRUE o FALSE
  password_verify($pass,$password_segura);
+
+#----------------------------------------------------------------------------------------------------------------------------------------------
+# 18) Guardar string sin espacios
+
+trim($email);
 
 #----------------------------------------------------------------------------------------------------------------------------------------------
 
