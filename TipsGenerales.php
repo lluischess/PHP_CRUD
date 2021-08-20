@@ -19,6 +19,7 @@
 # 16) Redireccionar Pagina web
 # 17) Cifrar contraseña
 # 18) Guardar string sin espacios
+# 19) Recortar String caracteres
 
 
 
@@ -313,8 +314,11 @@ header('Location:ver_cookies.php');
 trim($email);
 
 #----------------------------------------------------------------------------------------------------------------------------------------------
+# 19) Recortar String caracteres
 
+substr($entrada['fDesc'],0,200)
 
+#----------------------------------------------------------------------------------------------------------------------------------------------
 
 
 
