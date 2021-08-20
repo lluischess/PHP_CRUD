@@ -7,7 +7,7 @@
 # 4) Insertar datos
 # 5) Insertar usuario Nuevo
 # 6) Tolerar comillas simples i dobles en consultas sql
-# 7) 
+# 7) Listar Entradas
 # 8) 
 # 9) 
 
@@ -77,3 +77,33 @@ mysqli_real_escape_string($conecxionDB,$_POST['user']);
 
 
 #----------------------------------------------------------------------------------------------------------------------------------------------
+# 7) Listar Entradas
+
+function ObtenerEntradas($conexionDB){
+    $sql_select = "SELECT * FROM entradas ORDER BY id ASC LIMIT 5";
+    $entradas = mysqli_query($conexionDB,$sql_select);
+    $resultado = array();
+
+    if ($entradas && mysqli_num_rows($entradas) >= 1) {
+        $resultado = $entradas;
+    }
+    return $resultado;
+}
+
+?>
+<?php $entradas = ObtenerEntradas($conexionDB); ?>
+        <div id="principal">
+            <h1>Ultimas Entradas</h1>
+
+            <?php while ($entrada = mysqli_fetch_assoc($entradas)): ?>
+                <article class="entrada">
+                    <h2><?=$entrada['fTitulo']?></h2>
+                    <p><?=$entrada['fDesc']?></p>
+                </article>
+            <?php endwhile; ?>
+
+        </div>
+
+<?php
+
+
