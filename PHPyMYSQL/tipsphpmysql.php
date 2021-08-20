@@ -5,8 +5,8 @@
 # 2) Consulta para configurar la codificación de caracteres
 # 3) Mostrar datos
 # 4) Insertar datos
-# 5) 
-# 6) 
+# 5) Insertar usuario Nuevo
+# 6) Tolerar comillas simples i dobles en consultas sql
 # 7) 
 # 8) 
 # 9) 
@@ -61,14 +61,19 @@ if($insert){
 }
 
 #----------------------------------------------------------------------------------------------------------------------------------------------
+# 5) Insertar usuario Nuevo
 
-
+# Insert new user to DBB
+$date = date('Y-m-d H:i:s');
+$sql_insert = "INSERT INTO usuarios(fNombre,fApellidos,fEmail,fPassword,fFecha) VALUES('$name','$apellidos','$email','$password_segura', '$date')";
+$guardar = mysqli_query($conexionDB,$sql_insert);
 
 
 
 #----------------------------------------------------------------------------------------------------------------------------------------------
+# 6) Tolerar comillas simples i dobles en consultas sql
 
-
+mysqli_real_escape_string($conecxionDB,$_POST['user']);
 
 
 #----------------------------------------------------------------------------------------------------------------------------------------------
