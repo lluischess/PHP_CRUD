@@ -17,6 +17,7 @@
 # 14) Arrays Multidimensionales
 # 15) Funciones para Arrays
 # 16) Redireccionar Pagina web
+# 17) Cifrar contraseña
 
 
 
@@ -296,9 +297,16 @@ echo count($num);
 header('Location:ver_cookies.php');
 
 #----------------------------------------------------------------------------------------------------------------------------------------------
-# 12) 
+# 17) Cifrar contraseña
 
- 
+ #                          Password /    Encriptación    / pasadas de encriptado
+ $password_segura = password_hash($pass, PASSWORD_BCRYPT, ['cost'=>4]);
+
+ # Descifrar contraseña y comparar la password
+ #   password original / pasword encriptada(hash) TRUE o FALSE
+ password_verify($pass,$password_segura);
+
+#----------------------------------------------------------------------------------------------------------------------------------------------
 
 
 

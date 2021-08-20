@@ -9,7 +9,7 @@
 # 6) Cookie con Expiración
 # 7) Mostrar Cookies
 # 8) Borrar Cookies
-# 9)
+# 9) Comprobar que la session no exista
 # 10)
 # 11)
 # 12) 
@@ -94,3 +94,8 @@ if (isset($_COOKIE['UnAño'])) {
 header('Location:ver_cookies.php');
 
 #----------------------------------------------------------------------------------------------------------------------------------------------
+# 9) Comprobar que la session no exista
+
+if (!isset($_SESSION)){
+    session_start();
+}
