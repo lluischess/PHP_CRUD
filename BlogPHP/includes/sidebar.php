@@ -4,9 +4,9 @@
     <div id="usuario-logueado" class="bloque">
         <h3>Bienvenido <?=$_SESSION['usuario']['fNombre']. " " .$_SESSION['usuario']['fApellidos'] ?></h3>
         <h3><?=$_SESSION['usuario']['fEmail'] ?></h3>
-        <a href="" class="boton boton-verde">Crear Entrada</a>
-        <a href="" class="boton">Crear Categoria</a>
-        <a href="" class="boton boton-naranja">Modificar Perfil</a>
+        <a href="crear-entradas.php" class="boton boton-verde">Crear Entrada</a>
+        <a href="crear-categoria.php" class="boton">Crear Categoria</a>
+        <a href="misDatos.php" class="boton boton-naranja">Modificar Perfil</a>
         <a href="logout.php" class="boton boton-rojo">Cerrar Session</a>
     </div>
     <?php else: ?>
@@ -26,7 +26,7 @@
             <input type="submit" name="submitlogin" value="Entrar">
         </form>
     </div>
-    <?php endif; ?>
+    
 
     <div id="register" class="block-aside">
 
@@ -61,6 +61,7 @@
 
             <input type="submit" name="submitregistro" value="Registrar">
         </form>
+        <?php endif; ?>
         <?php isset($_SESSION['errores']) ? LimpiarError() : ''; ?>
     </div>
 </aside>
