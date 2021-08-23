@@ -6,8 +6,8 @@
 # 3) Convertir una array a json string
 # 4) Tipos de Datos para convertir en JSON
 # 5) json_encode() y json_decode() PHP
-# 6)
-
+# 6) Cliente/servidor Peticion XMLHttpRequest Asyncrona
+# 7) Bases de datos Jqery-ajax-mysql y json
 
 
 #----------------------------------------------------------------------------------------------------------------------------------------------
@@ -131,3 +131,34 @@ $lista = '{"bar":"valor", "bar2":"valor2"}';
 var_dump(json_decode($lista,true));
 
 #----------------------------------------------------------------------------------------------------------------------------------------------
+# 6) Cliente/servidor Peticion XMLHttpRequest Asyncrona
+# las peticiones http se pueden hacer de 2 formas syncrona y asyncrona
+?>
+<script>
+var variable = new XMLHttpRequest(); // Creamos instancia del objeto XMLHttprequest puede ser cualquier formato no solo XML
+
+variable.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200){
+        var miobj = JSON.parse(variable.responseText); // variable. o this. es lo mismo
+        console.log(variable.status + " " + variable.readyState);
+        console.log(miobj);
+        console.log(miobj.nombre); // acceder a los datos del json
+    }
+};
+
+variable.open("GET","datos_json.txt",true); // inicia la peticion
+variable.send(); // envia la peticion al servidor
+
+</script>
+<?php
+
+
+#----------------------------------------------------------------------------------------------------------------------------------------------
+# 7) Bases de datos Jqery-ajax-mysql y json
+?>
+<script src="jquery/jquery-3-6-0.min.js"></script>
+<button id="btnConsulta">Consulta</button>
+<script>
+
+</script>
+<?php

@@ -1,0 +1,9 @@
+{
+    "nombre":"Juan",
+    "edad":33,
+    "vehículos":[
+        { "tipo":"coche", "marca":"citroen" },
+        { "tipo":"coche", "marca":"mercedes" },
+        { "tipo":"coche", "marca":"BMW" }
+    ]
+}
