@@ -5,7 +5,7 @@
 # 2) Funcion JSON.parse() y JSON.stringify()
 # 3) Convertir una array a json string
 # 4) Tipos de Datos para convertir en JSON
-# 5) 
+# 5) json_encode() y json_decode() PHP
 # 6)
 
 
@@ -15,6 +15,9 @@
 # Es un formato de texto para compartir datos en arquitectura cliente servidor
 # Estandar en intercambio de datos
 # Altermativa a JSON es XML
+
+# WEB para Crear JSON SINTAXIS VALIDATE JSON
+# https://jsonlint.com/
 
 #----------------------------------------------------------------------------------------------------------------------------------------------
 # 2) Funcion JSON.parse() y JSON.stringify()
@@ -95,7 +98,36 @@ console.log(ojetocomplejo.educación.secundario);
 
 
 #----------------------------------------------------------------------------------------------------------------------------------------------
-# 5) 
+# 5) json_encode() y json_decode() PHP
+# JSON.encode codifica los datos devuelve la representacion json y nos retorna un string con la representacion
+# Objeto a JSON
+$objeto = new stdClass();
+$objeto->nombre = "Estela";
+$objeto->edad = 22;
+$objeto->pais = "francia";
 
+$mijson = json_encode($objeto);
+echo $mijson;
+
+echo json_encode($objeto->nombre." - ".$objeto->edad);
+# Array a JSON
+$tabla = array("lunes","martes","miercoles");
+echo json_encode($tabla);
+
+# Array asociativo con caracteres especiales
+header('Content-Type: application/json; charset=utf-8');
+$tabla2 = array("nombre"=>"Jazme","mártes"=>"voley","miercoles"=>"play']");
+echo json_encode($tabla2,JSON_UNESCAPED_UNICODE);
+
+
+# JSON.decode 
+# Convierte un JSON a una variable php
+$json = '{"a":1,"b":2,"c":3}';
+$mivariable = json_decode($json);
+var_dump($mivariable);
+
+# para listas asociativas true
+$lista = '{"bar":"valor", "bar2":"valor2"}';
+var_dump(json_decode($lista,true));
 
 #----------------------------------------------------------------------------------------------------------------------------------------------
