@@ -7,7 +7,7 @@
 # 4) Saltos de linea o tabulador en un String
 # 5) Function con paramaetros opcionales
 # 6) La mejor Practica con funciones es el return
-# 7) Variables locales y globales
+# 7) Variables locales, globales y Constantes, Constantes predefinidas
 # 8) Funciones variables ejemplo
 # 9) Funciones Predefinidas en php
 # 10) Funciones Matematicas
@@ -78,7 +78,7 @@ sumar(2, 3);
 
 
 #----------------------------------------------------------------------------------------------------------------------------------------------
-# 7) Variables locales y globales
+# 7) Variables locales, globales y Constantes, Constantes predefinidas
 $frase = "<h1>Hola soy Luis</h1>";
 
 echo $frase;
@@ -91,6 +91,16 @@ function hola(){
 
  hola();
 
+ # Definir una constante:
+ define('nombre','Luis');
+
+ echo nombre;
+
+ # Constantes predefinidas
+ echo PHP_OS.'<br>'; // sistema operativo
+ echo PHP_VERSION.'<br>'; // version php
+ echo PHP_EXTENSION_DIR.'<br>'; // Extensiones de php instaladas
+ echo __FILE__;
 
 #----------------------------------------------------------------------------------------------------------------------------------------------
 # 8) Funciones variables ejemplo
