@@ -35,6 +35,7 @@
     # - rewrite_module
     
 
+echo "Hola mundo";
 
 
 
