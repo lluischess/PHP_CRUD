@@ -1,9 +1,9 @@
 <?php
 
 # INDEX 
-# 1) Funciones Es nulo o Esta vacio?
-# 2) Echo rapido en php
-# 3) Debugear el contenido de una variable
+# 1) Variable definida o esta vacio? isset() empty()
+# 2) PHP abreviado para formularios HTML
+# 3) Imprimir valores con var_dump() y print_r()
 # 4) Saltos de linea o tabulador en un String
 # 5) Function con paramaetros opcionales
 # 6) La mejor Practica con funciones es el return
@@ -26,24 +26,46 @@
 
 
 #----------------------------------------------------------------------------------------------------------------------------------------------
-# 1) Funciones Es nulo o Esta vacio?
-# utilizar ? en caso contrario 
-#isset = es nulo?
-#empty = esta vacio?
-# Ejemplo 1  despues del ? se pone la otra condicion
-$action = isset($_POST['action']) ? $_POST['action'] : '';
+# 1) Es nulo o esta vacio? isset() empty()
+
+# isset determina si una variable esta definida
+# empty determina si una variable esta vacia
+
+# Ejemplo 1  
+# Si existe el $_POST['action'] entonces guardara el valor en la variable $action
+$action = isset($_POST['action']) ? $_POST['action'] : 'action no existe';
 
 # Ejemplo 2 
-$campo = empty($_POST['action']) ?  $_POST['action'] : '';
+# Si la variable $_POST['action'] no esta vacia guardara el valor de POST en la variable $action 
+$campo = !empty($_POST['action']) ?  $_POST['action'] : 'action vacia';
 
 #----------------------------------------------------------------------------------------------------------------------------------------------
-# 2) Echo rapido en php
-/* <?="echo rapido"?> */
+# 2) PHP abreviado para formularios HTML
+
+# Ejemplo 1 
+# Podemos imprimir en un HTML la variable $saludos de la siguiente manera:
+$saludos = "Hola soy una variable PHP";
+?>  
+
+<h1><?=$saludos?></h1>  
+
+<?php
 
 #----------------------------------------------------------------------------------------------------------------------------------------------
-# 3) Debugear el contenido de una variable
+# 3) Imprimir valores con var_dump() y print_r()
+
+# var_dump() Esta función muestra información sobre una o más expresiones incluyendo su tipo y valor. 
+# Las matrices y los objetos son explorados recursivamente con valores sangrados para mostrar su estructura.
+
+# print_r() Muestra información sobre una variable en una forma que es legible por humanos.
+
+# Ejemplo 1 
 $variable = "Hola";
 var_dump($variable);
+
+# Ejemplo 2
+$a = array ('a' => 'manzana', 'b' => 'banana', 'c' => array ('x', 'y', 'z'));
+print_r($a);
 
 #----------------------------------------------------------------------------------------------------------------------------------------------
 # 4) Saltos de linea o tabulador en un String
