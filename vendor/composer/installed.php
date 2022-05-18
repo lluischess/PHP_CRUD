@@ -5,7 +5,7 @@
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => 'a3df1cf8f9f9720afb8009cf70f20a740e1d47fc',
+        'reference' => '01b07bfe11fded775d7504fe530e59bc071f7229',
         'name' => '__root__',
         'dev' => true,
     ),
@@ -16,7 +16,7 @@
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => 'a3df1cf8f9f9720afb8009cf70f20a740e1d47fc',
+            'reference' => '01b07bfe11fded775d7504fe530e59bc071f7229',
             'dev_requirement' => false,
         ),
         'doctrine/instantiator' => array(
@@ -308,6 +308,15 @@
             'install_path' => __DIR__ . '/../spipu/html2pdf',
             'aliases' => array(),
             'reference' => '119d660876546c6b496f8aa6490f1ab8111350f9',
+            'dev_requirement' => false,
+        ),
+        'stefangabos/zebra_pagination' => array(
+            'pretty_version' => '2.4.2',
+            'version' => '2.4.2.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../stefangabos/zebra_pagination',
+            'aliases' => array(),
+            'reference' => '1b75050519c19de59b70464de7cc02abcbe75a76',
             'dev_requirement' => false,
         ),
         'symfony/polyfill-ctype' => array(
