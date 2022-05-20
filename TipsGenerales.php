@@ -9,7 +9,7 @@
 # 6) La mejor Practica con funciones es el return
 # 7) Variables locales, globales y Constantes, Constantes predefinidas
 # 8) Funciones variables ejemplo
-# 9) Funciones Predefinidas en php
+# 9) Funciones para fechas
 # 10) Funciones Matematicas
 # 11) Mas funciones Predefinidas
 # 12) Include y require
@@ -20,7 +20,7 @@
 # 17) Cifrar contraseña
 # 18) Guardar string sin espacios
 # 19) Recortar String caracteres
-# 20) Devolver Class vacia
+# 20) Crear objeto vacio nuevo
 
 
 
@@ -69,26 +69,34 @@ print_r($a);
 
 #----------------------------------------------------------------------------------------------------------------------------------------------
 # 4) Saltos de linea o tabulador en un String
-
+# Ejemplo:
 $text = "Soy un texto y \n HOla \t Salto de tabulador";
 
 #----------------------------------------------------------------------------------------------------------------------------------------------
 # 5) Function con paramaetros opcionales
+
+# El tercer parametro es opcional ya que predeterminadamente sera false
+# Ejemplo:
 function sumar($numero1, $numero2, $numero3 = false){ 
-    if ( isset($numero3) ) { 
-      echo "<h1>" . ($numero1 + $numero2) . "</h1>";
+    if ( $numero3 == false ) { 
+        $resul = "<h1>" . ($numero1 + $numero2) . "</h1>";
     }else{
-      echo "<h1>" . ($numero1 + $numero2 + $numero3) . "</h1>";
+        $resul = "<h1>" . ($numero1 + $numero2 + $numero3) . "</h1>";
     }
+    return $resul;
 }
 
-sumar(2, 3);
+$resultado = sumar(2, 3);
+$resultado = sumar(3, 3, 4);
 
 
 #----------------------------------------------------------------------------------------------------------------------------------------------
 # 6) La mejor Practica con funciones es el return
+
+# Es primordial que una función retorne siempre un valor ya que es una funcionalidad
+# Ejemplo:
 function sumar2($numero1, $numero2, $numero3 = false){ 
-    if ( isset($numero3) ) { 
+  if ( $numero3 == false ) { 
         $resul = "<h1>" . ($numero1 + $numero2) . "</h1>";
     }else{
         $resul = "<h1>" . ($numero1 + $numero2 + $numero3) . "</h1>";
@@ -101,8 +109,9 @@ sumar(2, 3);
 
 #----------------------------------------------------------------------------------------------------------------------------------------------
 # 7) Variables locales, globales y Constantes, Constantes predefinidas
-$frase = "<h1>Hola soy Luis</h1>";
 
+# Variable local
+$frase = "<h1>Hola soy Luis</h1>";
 echo $frase;
 
 function hola(){ 
@@ -110,23 +119,21 @@ function hola(){
   global $frase; 
     return $frase;
  }
-
  hola();
 
  # Definir una constante:
  define('nombre','Luis');
-
  echo nombre;
 
  # Constantes predefinidas
  echo PHP_OS.'<br>'; // sistema operativo
  echo PHP_VERSION.'<br>'; // version php
  echo PHP_EXTENSION_DIR.'<br>'; // Extensiones de php instaladas
- echo __FILE__;
+ echo __FILE__; // la ruta y el nombre del archivo
 
 #----------------------------------------------------------------------------------------------------------------------------------------------
 # 8) Funciones variables ejemplo
-
+# Se puede guardar una función en una variable
 function buenosdias(){ 
   return "Hola buenos dias";
 }
@@ -141,7 +148,7 @@ echo $funcion_saludos();
 
 
 #----------------------------------------------------------------------------------------------------------------------------------------------
-# 9) Funciones Fechas
+# 9) Funciones para fechas
 
 # Formato de fecha:
 echo date('d-m-y') . "<br>";
@@ -173,7 +180,7 @@ echo "Redondear ".round(7.5812312,2);
 #----------------------------------------------------------------------------------------------------------------------------------------------
 # 11) Mas funciones Predefinidas
 
-# tipo de variable
+#gettype() devuelve el tipo de variable que es
 $tabla = [];
 echo gettype($tabla);
 
@@ -182,11 +189,11 @@ echo is_array($tabla);
 echo is_float($tabla);
 echo is_bool($tabla);
 
-# Limpiar espacios de un string al inicio y al final
+# trim() Limpiar espacios en blanco de un string al inicio y al final
 $texto = "  hola   ";
 var_dump(trim($texto));
 
-# Eliminar variable o indices
+# Eliminar variable o indices de array
 unset($tabla);
 
 # Contador de caracteres de un string
@@ -330,6 +337,7 @@ echo count($num);
 # 16) Redireccionar Pagina web
 
 header('Location:ver_cookies.php');
+header("Location:" . $domain . 'userController/registro');
 
 #----------------------------------------------------------------------------------------------------------------------------------------------
 # 17) Cifrar contraseña
@@ -352,7 +360,7 @@ trim($email);
 substr($entrada['fDesc'],0,200);
 
 #----------------------------------------------------------------------------------------------------------------------------------------------
-# 20) Devolver Class vacia
+# 20) Crear objeto vacio nuevo
 
 $objeto = new stdClass();
 #----------------------------------------------------------------------------------------------------------------------------------------------
