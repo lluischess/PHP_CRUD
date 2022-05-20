@@ -11,10 +11,12 @@
 #----------------------------------------------------------------------------------------------------------------------------------------------
 # 1) Typed Properties
 # se le puede añadir el tipo de variable que es es de tipo coche y ya no se podra modificar el tipo de variable
+ 
 # private Coche $coche;
 
 # ? delante para decir que puede ser null
-# private ?Coche $coche;
+
+ # private ?Coche $coche;
 
 #----------------------------------------------------------------------------------------------------------------------------------------------
 # 2) Arrow Functions
@@ -55,7 +57,7 @@ $request = [
 
 
 # Antes
-$request['cat'] = $request['cat'] ? $request['cat']: 'categoria por defecto';
+$request['cat'] = $request['cat'] ? $request['cat'] : 'categoria por defecto';
 # si no esta la categoria pon el string
 $request['cat'] = $request['cat'] ?? 'categoria por defecto';
 
