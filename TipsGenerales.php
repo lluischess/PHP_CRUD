@@ -20,7 +20,9 @@
 # 17) Cifrar contraseña
 # 18) Guardar string sin espacios
 # 19) Recortar String caracteres
-# 20) Crear objeto vacio nuevo
+# 20) Clase predefinida para hacer pruebas stdClass()
+# 21) Concatenación de cadenas, comillas simples(') vs comillas dobles(")
+# 22) Definicion de tus programas
 
 
 
@@ -360,14 +362,31 @@ trim($email);
 substr($entrada['fDesc'],0,200);
 
 #----------------------------------------------------------------------------------------------------------------------------------------------
-# 20) Crear objeto vacio nuevo
+# 20) Clase predefinida para hacer pruebas stdClass()
+
+# Es una clase predefinida sin atributos ni metodos.
+# Y la podemos usar cuando queremos crear un objeto genérico al que después podemos agregar propiedades.
 
 $objeto = new stdClass();
+$objeto->color = 'Rojo'; // ahora que esta definido este atributo lo podemos reutilizar para cualquier cosa
+
 #----------------------------------------------------------------------------------------------------------------------------------------------
+# 21) Concatenación de cadenas, comillas simples(') vs comillas dobles(")
+
+# Cuando trabajes con cadenas, evita siempre el uso de comillas dobles. 
+# La razón es que PHP analiza el contenido de las comillas dobles en búsqueda de variables que deban ser interpretadas, resultando en un tiempo de ejecución mayor.
 
 
+#----------------------------------------------------------------------------------------------------------------------------------------------
+# 22) Definicion de tus programas
+
+# Los nombres de las clases en MixedCase. Ejemplo: ElNombreDeMiClase
+# Los nombres de los métodos en camelCase. Ejempo: nombreDelMetodo()
+# Las constantes siempre en ALL_CAPS. Ejemplo: COLOR_DEFINIDO_PARA_MI
+# Las variables, propiedades y parámetros en giones bajos. Ejemplo $mi_palabra_secreta
 
 
+#----------------------------------------------------------------------------------------------------------------------------------------------
 
 
 
